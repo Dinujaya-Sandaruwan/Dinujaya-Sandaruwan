@@ -2,8 +2,10 @@
 ![Image](https://user-images.githubusercontent.com/88492493/166566368-f0486ac3-c53a-4872-9e34-db7eaf4ac470.jpg)
 
 
-
-Solarized dark   ![Uploading gg.gif…]()
-          |  Solarized Ocean
+Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/88492493/166573916-b8a739f7-3614-4e5f-91d9-48f53d84d945.gif)  |  ![](https://user-images.githubusercontent.com/88492493/166573959-93b1eb7c-ac9c-49a9-9f7b-cca04ccffcd0.gif)
+![](https://...Dark.png)  |  ![](https://...Ocean.png)
+
+
+![2](https://user-images.githubusercontent.com/88492493/166574199-64f1b59a-078b-4f27-8966-be94ae5e6eee.gif)
+![1](https://user-images.githubusercontent.com/88492493/166574209-b92f7828-2316-4ccc-a6ac-7def6f6756f2.gif)
