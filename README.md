@@ -4,5 +4,5 @@
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/88492493/166574199-64f1b59a-078b-4f27-8966-be94ae5e6eee.gif)  |  ![](https://user-images.githubusercontent.com/88492493/166574209-b92f7828-2316-4ccc-a6ac-7def6f6756f2.gif)
+![](https://user-images.githubusercontent.com/88492493/166574667-b522bd67-5025-49d1-9279-3b2edef55671.gif)  |  ![](https://user-images.githubusercontent.com/88492493/166574209-b92f7828-2316-4ccc-a6ac-7def6f6756f2.gif)
 
