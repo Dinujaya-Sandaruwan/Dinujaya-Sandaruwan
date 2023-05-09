@@ -1,6 +1,6 @@
 
-<!-- ![Image](https://user-images.githubusercontent.com/88492493/166566368-f0486ac3-c53a-4872-9e34-db7eaf4ac470.jpg) -->
-![Image](https://github.com/Dinujaya-Sandaruwan/Dinujaya-Sandaruwan/assets/88492493/0a2e76b6-42d6-4ab5-91d3-95deb0893bc5)
+![Image](https://user-images.githubusercontent.com/88492493/166566368-f0486ac3-c53a-4872-9e34-db7eaf4ac470.jpg)
+<!-- ![Image](https://github.com/Dinujaya-Sandaruwan/Dinujaya-Sandaruwan/assets/88492493/0a2e76b6-42d6-4ab5-91d3-95deb0893bc5) -->
 
 <!-- Addicted To          |  Programming
 :-------------------------:|:-------------------------:
