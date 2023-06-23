@@ -30,7 +30,7 @@
 
 <br/>
 
-# Nee to know more details about me. 😋
+# Need to know more details about me. 😋
 
 <br/>
 
