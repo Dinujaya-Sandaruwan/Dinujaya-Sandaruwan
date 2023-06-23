@@ -37,91 +37,93 @@
 > Simple code to use my bio data API ( http://api.dinujaya.com/ ) <strong>hosted in Microsoft Azure Cloud VPS</strong>
 
 ``` typescript 
-import React, { Component } from 'react';
-import { Button, VStack, Avatar, Text } from '@chakra-ui/react';
-import { AiFillPhone } from 'react-icons/ai';
+import React from 'react';
 import axios from 'axios';
+import { Button, Box, Avatar, Text, Stack } from '@chakra-ui/react';
 
 interface UserData {
-    user_name: string;
+  basic_info: {
+    full_name: string;
+    uer_name: string;
     nic_name: string;
-    user_avatar: string;
+    user_avater: string;
     country: string;
+  };
+  contact_details: {
     whatsapp: string;
-    comfortable_skills: string[];
-    still_learning_skills: string[];
+  };
+  skills: {
+    comfortable: string[];
+    currently_learning: string[];
+  };
 }
 
-interface State {
-    userData: UserData | null;
+interface AppState {
+  userData: UserData | null;
+  isLoading: boolean;
 }
 
-class UserComponent extends Component<{}, State> {
-    state: State = {
-        userData: null,
+class UserDataDisplay extends React.Component<{}, AppState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      userData: null,
+      isLoading: false,
     };
+  }
 
-    fetchData = async () => {
-        try {
-            const response = await axios.get('https://api.dinujaya.com/');
-            const userData = response.data;
-            this.setState({ userData });
-        } catch (error) {
-            console.log(error);
-        }
-    };
+  fetchData = () => {
+    this.setState({ isLoading: true });
+    axios.get('https://api.dinujaya.com/')
+      .then((response) => {
+        const userData: UserData = response.data;
+        this.setState({ userData, isLoading: false });
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        this.setState({ isLoading: false });
+      });
+  };
 
-    renderUserData() {
-        const { userData } = this.state;
+  render() {
+    const { userData, isLoading } = this.state;
 
-        if (userData) {
-            const {
-                user_name,
-                nic_name,
-                user_avatar,
-                country,
-                whatsapp,
-                comfortable_skills,
-                still_learning_skills,
-            } = userData;
+    return (
+      <Box p={4}>
+        <Button onClick={this.fetchData} disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Fetch Data'}
+        </Button>
 
-            return (
-                <VStack spacing={4} alignItems="center">
-                    <Avatar size="xl" src={user_avatar} />
-                    <Text fontWeight="bold">{user_name}</Text>
-                    <Text>{`Nickname: ${nic_name}`}</Text>
-                    <Text>{`Country: ${country}`}</Text>
-                    <Text>{`WhatsApp: ${whatsapp}`}</Text>
-                    <Text fontWeight="bold">Comfortable Skills:</Text>
-                    <VStack spacing={2} alignItems="flex-start">
-                        {comfortable_skills.map((skill, index) => (
-                            <Text key={index}>{skill}</Text>
-                        ))}
-                    </VStack>
-                    <Text fontWeight="bold">Still Learning Skills:</Text>
-                    <VStack spacing={2} alignItems="flex-start">
-                        {still_learning_skills.map((skill, index) => (
-                            <Text key={index}>{skill}</Text>
-                        ))}
-                    </VStack>
-                </VStack>
-            );
-        }
+        {userData && (
+          <Stack spacing={4} mt={4}>
+            <Avatar size="xl" src={userData.basic_info.user_avater} />
+            <Text fontSize="xl">Full Name: {userData.basic_info.full_name}</Text>
+            <Text fontSize="xl">Username: {userData.basic_info.uer_name}</Text>
+            <Text fontSize="xl">Nickname: {userData.basic_info.nic_name}</Text>
+            <Text fontSize="xl">Country: {userData.basic_info.country}</Text>
+            <Text fontSize="xl">WhatsApp: {userData.contact_details.whatsapp}</Text>
 
-        return null;
-    }
+            <Text fontSize="xl" fontWeight="bold">Comfortable Skills:</Text>
+            <Stack direction="row" flexWrap="wrap">
+              {userData.skills.comfortable.map((skill, index) => (
+                <Text key={index}>{skill}</Text>
+              ))}
+            </Stack>
 
-    render() {
-        return (
-            <div>
-                <Button onClick={this.fetchData}>Fetch Data</Button>
-                {this.renderUserData()}
-            </div>
-        );
-    }
+            <Text fontSize="xl" fontWeight="bold">Currently Learning Skills:</Text>
+            <Stack direction="row" flexWrap="wrap">
+              {userData.skills.currently_learning.map((skill, index) => (
+                <Text key={index}>{skill}</Text>
+              ))}
+            </Stack>
+          </Stack>
+        )}
+      </Box>
+    );
+  }
 }
 
-export default UserComponent;
+export default UserDataDisplay;
 
 
 ```
