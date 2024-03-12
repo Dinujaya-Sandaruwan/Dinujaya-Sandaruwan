@@ -30,7 +30,8 @@
 
 > Simple code to use my bio data API ( https://api.dinujaya.me/ ) <strong>hosted in DigitalOcean VPS</strong>
 
-``` typescript 
+``` typescript
+
 const API_BASE_URL = "https://api.dinujaya.me";
 
 // Function to sign in and obtain access token
