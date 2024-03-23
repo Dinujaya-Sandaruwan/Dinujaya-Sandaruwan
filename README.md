@@ -6,7 +6,7 @@
 
 - 🌱 I’m currently learning **React advance concepts and React Native**
 
-- 👯 I’m looking to collaborate on [Lodgelink.come](https://lodgelink.com)
+- 👯 I’m looking to collaborate on [Lodgelink.net](https://lodgelink.net)
 
 - 👨‍💻 All of my projects are available at [dinujaya.me](https://dinujaya.me/)
 
